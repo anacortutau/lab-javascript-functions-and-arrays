@@ -68,7 +68,13 @@ function sum(sumNumber) {
     return sum;
   }
   for (let i = 0; i < sumNumber.length; i++){
-    sum += sumNumber[i]
+    if (typeof sumNumber[i] === 'number') {
+      sum += sumNumber[i]
+    } if (typeof sumNumber[i] === 'string') {
+      sum += sumNumber[i].length
+    } if (typeof sumNumber[i] === 'boolean') {
+      sum += sumNumber[i]
+    } 
   }
   return sum;
 }
